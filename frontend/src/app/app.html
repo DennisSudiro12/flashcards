@@ -1,4 +1,13 @@
-<h1>Flashcards App</h1>
+<div class="app-shell">
+  <header class="app-header">
+    <h1>Flashcards App</h1>
+    <button type="button" class="theme-toggle" (click)="toggleTheme()">
+      {{ isDark() ? 'Switch to light mode' : 'Switch to dark mode' }}
+    </button>
+  </header>
 
-<app-flashcard-list></app-flashcard-list>
+  <main>
+    <app-flashcard-list></app-flashcard-list>
+  </main>
+</div>
 

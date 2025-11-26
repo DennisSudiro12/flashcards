@@ -1,13 +1,15 @@
-<div class="flashcard">
-  <h3>{{ card.question }}</h3>
+<div class="flashcard" [class.is-flipped]="card.showAnswer">
+  <div class="flashcard__inner">
+    <div class="flashcard__face flashcard__face--front">
+      <p class="flashcard__label">Question</p>
+      <h3>{{ card.question }}</h3>
+      <button type="button" (click)="toggleAnswer()">Show answer</button>
+    </div>
 
-  <button (click)="toggleAnswer()">
-    {{ card.showAnswer ? 'Hide answer' : 'Show answer' }}
-  </button>
-
-  @if (card.showAnswer) {
-    <p class="answer">
-      {{ card.answer }}
-    </p>
-  }
+    <div class="flashcard__face flashcard__face--back">
+      <p class="flashcard__label">Answer</p>
+      <p class="answer">{{ card.answer }}</p>
+      <button type="button" (click)="toggleAnswer()">Hide answer</button>
+    </div>
+  </div>
 </div>

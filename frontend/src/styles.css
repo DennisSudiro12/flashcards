@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --page-bg: #f4f6fb;
+  --text-primary: #0f172a;
+  --text-muted: #5f6b7a;
+  --card-bg: linear-gradient(145deg, #ffffff, #f3f6ff);
+  --card-border: #e5e9f2;
+  --card-shadow: 0 16px 28px -18px rgba(31, 41, 55, 0.35),
+    0 8px 14px -10px rgba(31, 41, 55, 0.18);
+  --button-bg: #3b82f6;
+  --button-bg-hover: #1d4ed8;
+  --button-text: #ffffff;
+}
+
+body.theme-dark {
+  --page-bg: #0b1220;
+  --text-primary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --card-bg: linear-gradient(160deg, #0f172a, #111827);
+  --card-border: #1f2937;
+  --card-shadow: 0 18px 30px -18px rgba(0, 0, 0, 0.65),
+    0 10px 16px -12px rgba(0, 0, 0, 0.45);
+  --button-bg: #2563eb;
+  --button-bg-hover: #1d4ed8;
+  --button-text: #e0f2fe;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
