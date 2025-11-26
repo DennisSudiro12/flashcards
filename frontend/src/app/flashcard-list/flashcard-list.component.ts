@@ -32,4 +32,23 @@ export class FlashcardListComponent {
       showAnswer: false,
     },
   ];
+
+  currentIndex = 0;
+
+  next(): void {
+    if (!this.flashcards.length) return;
+    this.flashcards[this.currentIndex].showAnswer = false;
+    this.currentIndex = (this.currentIndex + 1) % this.flashcards.length;
+  }
+
+  previous(): void {
+    if (!this.flashcards.length) return;
+    this.flashcards[this.currentIndex].showAnswer = false;
+    this.currentIndex =
+      (this.currentIndex - 1 + this.flashcards.length) % this.flashcards.length;
+  }
+
+  depth(idx: number): number {
+    return (idx - this.currentIndex + this.flashcards.length) % this.flashcards.length;
+  }
 }

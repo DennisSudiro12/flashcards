@@ -1,5 +1,21 @@
-<h2>My Deck</h2>
+<section class="deck-shell">
+  <header class="deck-header">
+    <h2>My Deck</h2>
+    <div class="deck-actions">
+      <button type="button" (click)="previous()">Back</button>
+      <button type="button" (click)="next()">Next</button>
+    </div>
+  </header>
 
-@for (card of flashcards; track card.id) {
-  <app-flashcard-card [card]="card"></app-flashcard-card>
-}
+  <div class="deck-stack">
+    @for (card of flashcards; track card.id; let i = $index) {
+      <app-flashcard-card
+        class="deck-card"
+        [class.is-active]="depth(i) === 0"
+        [class.is-hidden]="depth(i) > 2"
+        [ngStyle]="{ '--depth': depth(i) }"
+        [card]="card">
+      </app-flashcard-card>
+    }
+  </div>
+</section>
