@@ -45,8 +45,8 @@
 
   .deck-stack {
     position: relative;
-    height: 260px;
-    max-width: 640px;
+    height: 320px;
+    width: min(100%, 900px);
     margin: 0 auto;
   }
 
@@ -58,8 +58,8 @@
       opacity 0.45s ease,
       z-index 0.45s ease,
       filter 0.45s ease;
-    transform: translateY(calc(var(--depth) * 12px)) scale(calc(1 - (var(--depth) * 0.05)));
-    opacity: calc(1 - (var(--depth) * 0.2));
+    transform: translateY(calc(var(--depth) * 18px)) scale(calc(1 - (var(--depth) * 0.06)));
+    opacity: calc(1 - (var(--depth) * 0.22));
     z-index: calc(10 - var(--depth));
     filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.08));
     pointer-events: none;
