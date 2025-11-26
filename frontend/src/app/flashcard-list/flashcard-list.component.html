@@ -1,0 +1,19 @@
+<h2>My Flashcards</h2>
+
+@for (card of flashcards; track card.id) {
+  <div class="flashcard">
+    <h3>{{ card.question }}</h3>
+
+    <button (click)="toggleAnswer(card)">
+      {{ card.showAnswer ? 'Hide answer' : 'Show answer' }}
+    </button>
+
+    @if (card.showAnswer) {
+      <p class="answer">
+        {{ card.answer }}
+      </p>
+    }
+
+    <hr />
+  </div>
+}
