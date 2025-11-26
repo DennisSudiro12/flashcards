@@ -1,21 +1,78 @@
 .flashcard {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 12px;
-  max-width: 500px;
+  perspective: 1200px;
+  max-width: 620px;
+  margin: 0 auto 18px;
 }
 
-.flashcard h3 {
-  margin-top: 0;
+.flashcard__inner {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.flashcard.is-flipped .flashcard__inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard__face {
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.flashcard__face--back {
+  transform: rotateY(180deg);
+}
+
+.flashcard__label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+  color: var(--text-primary);
 }
 
 .answer {
-  margin-top: 8px;
-  font-weight: bold;
+  margin: 0;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 button {
-  margin-top: 4px;
+  align-self: flex-start;
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--button-bg);
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 600;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+  background: var(--button-bg-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px -12px rgba(59, 130, 246, 0.65);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }

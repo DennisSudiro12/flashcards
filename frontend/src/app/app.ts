@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { FlashcardListComponent } from './flashcard-list/flashcard-list.component';
 
 
@@ -10,4 +11,12 @@ import { FlashcardListComponent } from './flashcard-list/flashcard-list.componen
 })
 export class App {
   protected readonly title = signal('frontend');
+  protected readonly isDark = signal(false);
+  private readonly document = inject(DOCUMENT);
+
+  toggleTheme(): void {
+    const next = !this.isDark();
+    this.isDark.set(next);
+    this.document.body.classList.toggle('theme-dark', next);
+  }
 }
