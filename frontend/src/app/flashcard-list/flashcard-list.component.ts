@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Flashcard } from '../flashcard.model';
+import { FlashcardCardComponent } from '../flashcard-card/flashcard-card.component';
 
 @Component({
-  selector: 'app-flashcard-list',
+  selector: 'app-flashcard-list', // this is effectively your "Deck" for now
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FlashcardCardComponent],
   templateUrl: './flashcard-list.component.html',
   styleUrls: ['./flashcard-list.component.css'],
 })
 export class FlashcardListComponent {
+  // This array is your deck
   flashcards: Flashcard[] = [
     {
       id: 1,
@@ -30,8 +32,4 @@ export class FlashcardListComponent {
       showAnswer: false,
     },
   ];
-
-  toggleAnswer(card: Flashcard): void {
-    card.showAnswer = !card.showAnswer;
-  }
 }

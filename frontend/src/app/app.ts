@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { FlashcardListComponent } from './flashcard-list/flashcard-list.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FlashcardListComponent],
+  imports: [FlashcardListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
