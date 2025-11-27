@@ -4,7 +4,7 @@ import { Card } from '../flashcard.model';
 import { FlashcardCardComponent } from '../flashcard-card/flashcard-card.component';
 
 @Component({
-  selector: 'app-flashcard-deck', // this is effectively your "Deck" for now
+  selector: 'app-flashcard-deck',
   standalone: true,
   imports: [CommonModule, FlashcardCardComponent],
   templateUrl: './flashcard-deck.component.html',
