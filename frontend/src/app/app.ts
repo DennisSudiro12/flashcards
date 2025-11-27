@@ -1,11 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { FlashcardListComponent } from './flashcard-list/flashcard-list.component';
+import { FlashcardDeckComponent } from './flashcard-deck/flashcard-deck.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [FlashcardListComponent],
+  imports: [FlashcardDeckComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

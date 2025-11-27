@@ -4,13 +4,13 @@ import { Card } from '../flashcard.model';
 import { FlashcardCardComponent } from '../flashcard-card/flashcard-card.component';
 
 @Component({
-  selector: 'app-flashcard-list', // this is effectively your "Deck" for now
+  selector: 'app-flashcard-deck', // this is effectively your "Deck" for now
   standalone: true,
   imports: [CommonModule, FlashcardCardComponent],
-  templateUrl: './flashcard-list.component.html',
-  styleUrls: ['./flashcard-list.component.css'],
+  templateUrl: './flashcard-deck.component.html',
+  styleUrls: ['./flashcard-deck.component.css'],
 })
-export class FlashcardListComponent {
+export class FlashcardDeckComponent {
   // This array is your deck
   flashcards: Card[] = [
     {
