@@ -11,7 +11,6 @@ import { FlashcardCardComponent } from '../flashcard-card/flashcard-card.compone
   styleUrls: ['./flashcard-deck.component.css'],
 })
 export class FlashcardDeckComponent {
-  // This array is your deck
   flashcards: Card[] = [
     {
       id: 1,
