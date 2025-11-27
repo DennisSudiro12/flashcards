@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Card } from '../flashcard.model';
 import { FlashcardCardComponent } from '../flashcard-card/flashcard-card.component';
@@ -10,29 +10,24 @@ import { FlashcardCardComponent } from '../flashcard-card/flashcard-card.compone
   templateUrl: './flashcard-deck.component.html',
   styleUrls: ['./flashcard-deck.component.css'],
 })
-export class FlashcardDeckComponent {
-  flashcards: Card[] = [
-    {
-      id: 1,
-      question: 'What is Rust?',
-      answer: 'A systems programming language focused on safety and performance.',
-      showAnswer: false,
-    },
-    {
-      id: 2,
-      question: 'What is Angular?',
-      answer: 'A frontend framework for building single-page applications with TypeScript.',
-      showAnswer: false,
-    },
-    {
-      id: 3,
-      question: 'What is TypeScript?',
-      answer: 'A superset of JavaScript that adds static typing.',
-      showAnswer: false,
-    },
-  ];
+export class FlashcardDeckComponent implements OnChanges {
+  @Input() cards: Card[] | null = null;
+
+  // default sample; overwritten when [cards] is provided
+  flashcards: Card[] = [];
 
   currentIndex = 0;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['cards']) {
+      const incoming = this.cards ?? [];
+      this.flashcards = incoming.length ? incoming : this.flashcards;
+      this.currentIndex = 0;
+      if (this.flashcards[0]) {
+        this.flashcards = this.flashcards.map(card => ({ ...card, showAnswer: false }));
+      }
+    }
+  }
 
   next(): void {
     if (!this.flashcards.length) return;

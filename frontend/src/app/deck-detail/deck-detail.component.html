@@ -1,0 +1,10 @@
+<div *ngIf="deck">
+  <h1>{{ deck.name }}</h1>
+  <p *ngIf="deck.description">{{ deck.description }}</p>
+
+  <button class="back-btn" (click)="router.navigate(['/'])">Back to decks</button>
+
+  <hr>
+
+  <app-flashcard-deck [cards]="deck.cards"></app-flashcard-deck>
+</div>

@@ -1,0 +1,9 @@
+<h1>Your Decks</h1>
+
+<div *ngFor="let deck of decks"
+     (click)="openDeck(deck.id)"
+     style="border: 1px solid #ccc; padding: 0.75rem; margin-bottom: 0.5rem; cursor: pointer;">
+  <h2>{{ deck.name }}</h2>
+  <p *ngIf="deck.description">{{ deck.description }}</p>
+  <small>{{ deck.cards.length }} cards</small>
+</div>

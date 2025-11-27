@@ -1,0 +1,24 @@
+@layer components {
+  .back-btn {
+    padding: 9px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--button-bg);
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    margin: 8px 0 16px;
+  }
+
+  .back-btn:hover {
+    background: var(--button-bg-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px -12px rgba(59, 130, 246, 0.5);
+  }
+
+  .back-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
