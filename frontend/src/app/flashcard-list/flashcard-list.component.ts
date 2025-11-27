@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Flashcard } from '../flashcard.model';
+import { Card } from '../flashcard.model';
 import { FlashcardCardComponent } from '../flashcard-card/flashcard-card.component';
 
 @Component({
@@ -12,7 +12,7 @@ import { FlashcardCardComponent } from '../flashcard-card/flashcard-card.compone
 })
 export class FlashcardListComponent {
   // This array is your deck
-  flashcards: Flashcard[] = [
+  flashcards: Card[] = [
     {
       id: 1,
       question: 'What is Rust?',

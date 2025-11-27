@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Flashcard } from '../flashcard.model';
+import { Card } from '../flashcard.model';
 
 @Component({
   selector: 'app-flashcard-card',
@@ -10,7 +10,7 @@ import { Flashcard } from '../flashcard.model';
   styleUrls: ['./flashcard-card.component.css'],
 })
 export class FlashcardCardComponent {
-  @Input({ required: true }) card!: Flashcard;
+  @Input({ required: true }) card!: Card;
 
   toggleAnswer(): void {
     this.card.showAnswer = !this.card.showAnswer;
